@@ -18,7 +18,15 @@ class StartController extends AbstractController
     #[Route('/', name: 'app_start')]
     public function index(): Response
     {
-        $this->logger->info("Start logger");
+        for ($i=0; $i <500 ; $i++) { 
+            $this->logger->info("I am Info");
+            $this->logger->error("I am error");
+            $this->logger->notice("I am notice");
+            $this->logger->debug("I am debug");
+            $this->logger->critical("I am critical");
+            $this->logger->warning("I am warning");
+        }
+        
         return $this->render('start/index.html.twig', [
             'controller_name' => 'StartController',
         ]);
