@@ -28,7 +28,7 @@ services:
     image: glitchtip/glitchtip
     depends_on: *default-depends_on
     ports:
-      - ${PORT}:8000
+      - ${GLITCHTIP_PORT}:8000
     environment: *default-environment
     restart: unless-stopped
     volumes: 
